@@ -25,7 +25,9 @@ struct ContentView: View {
                     .tag(element)
                 }
             }
-
+            
+            // MARK: experimantal tab with coordinator
+            
             NavigationStack(path: $coordinator.navigationPath) {
                 ExperementalView()
                     .addNavigationDestinations()
@@ -34,10 +36,8 @@ struct ContentView: View {
                     }
                     .navigationDestination(for: MainCoordinator.ExperementalTabs.self) {
                         switch $0 {
-                        case .red:
-                            Color.red
-                        case .blue:
-                            Color.blue
+                        case .red: Color.red
+                        case .blue: Color.blue
                         }
                     }
             }
