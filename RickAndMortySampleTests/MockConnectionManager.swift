@@ -45,7 +45,7 @@ final class MockNetworkManager: ConnectionManager {
                 throw ApiError.decodingFailed
             }
             return [RMEpisode.example] as! T
-        case .episode(let int):
+        case .episode:
             guard T.self is RMEpisode.Type else {
                 throw ApiError.decodingFailed
             }
