@@ -26,11 +26,22 @@ struct ContentView: View {
                 }
             }
 
-            NavigationStack {
+            NavigationStack(path: $coordinator.navigationPath) {
                 ExperementalView()
                     .addNavigationDestinations()
-                    .environmentObject(coordinator)
+                    .navigationDestination(for: Int.self) {
+                        NavigationStackDemo(number: $0)
+                    }
+                    .navigationDestination(for: MainCoordinator.ExperementalTabs.self) {
+                        switch $0 {
+                        case .red:
+                            Color.red
+                        case .blue:
+                            Color.blue
+                        }
+                    }
             }
+            .environmentObject(coordinator)
             .tabItem {
                 Label(MainCoordinator.Tabs.experimental.title, systemImage: MainCoordinator.Tabs.experimental.icon)
             }
@@ -40,6 +51,12 @@ struct ContentView: View {
             RemoteContentView(apiPath: $0)
                 .addNavigationDestinations()
                 .wrapToDismissableNavigation()
+        }
+        .sheet(isPresented: $coordinator.showDemoSheet) {
+            DemoSheetView()
+        }
+        .sheet(item: $coordinator.demoSheetContent) {
+            DemoSheetContentView(content: $0)
         }
     }
 }

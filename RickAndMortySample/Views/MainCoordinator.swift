@@ -17,7 +17,48 @@ final class MainCoordinator: ObservableObject {
     }
 
     @Published var selectedTab: Tabs = .characters
-    @Published var deepLink: ApiPath?
+
+// MARK: for demo working with Navigation Stack iOS16+ for programmatic/manual navigation on Experemental tab
+    enum ExperementalTabs: CaseIterable {
+        case red
+        case blue
+    }
+
+    @Published var navigationPath = NavigationPath()
+    @Published var showDemoSheet = false
+    @Published var demoSheetContent: DemoSheetContent?
+
+    func open(tab: ExperementalTabs) {
+        navigationPath.append(tab)
+    }
+
+    func backToRoot() {
+        navigationPath = NavigationPath()
+    }
+
+    func showSheet() {
+        showDemoSheet = true
+    }
+
+    func showSheet(with content: DemoSheetContent) {
+        demoSheetContent = content
+    }
+
+    func backTo(_ steps: Int) {
+        navigationPath.removeLast(steps)
+    }
+
+    func backToSecond() {
+        navigationPath.removeLast(navigationPath.count - 1)
+    }
+
+    func open(num: Int) {
+        navigationPath.append(num)
+    }
+
+    func pushToCharacter(_ int: Int) {
+        navigationPath.append(ApiPath.character(int))
+    }
 }
 
 extension MainCoordinator.Tabs {

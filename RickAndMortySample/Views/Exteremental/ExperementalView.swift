@@ -15,7 +15,7 @@ struct ExperementalView: View {
         VStack {
             List {
                 Section {
-                    DisclosureGroup("Navigation to") {
+                    DisclosureGroup("Choose tab to open") {
                         ForEach(MainCoordinator.Tabs.remoteContentTabs, id: \.self) { path in
                             Button {
                                 coordinator.selectedTab = path
@@ -28,6 +28,14 @@ struct ExperementalView: View {
                     Text("Testing EnvironmentObject and openning tabs")
                 } footer: {
                     Text("Should open the selected tab")
+                }
+
+                Section {
+                    NavigationLink(value: 0) {
+                        Text("Let's have some fun")
+                    }
+                } header: {
+                    Text("Navigation Stack with coordinator")
                 }
 
                 Section {

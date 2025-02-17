@@ -25,7 +25,7 @@ struct ModelTests {
     }
 
     @Test func testLocation() async throws {
-        var location = RMLocation.example
+        let location = RMLocation.example
         #expect(location.name == "Earth (C-137)")
         #expect(location.type == "Planet")
         #expect(location.dimension == "Dimension C-137")
