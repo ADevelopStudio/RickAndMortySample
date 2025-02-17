@@ -6,7 +6,6 @@
 //
 
 import Testing
-import SwiftUI
 @testable import RickAndMortySample
 
 struct RemoteContentViewModelTest {

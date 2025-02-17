@@ -25,9 +25,9 @@ struct ContentView: View {
                     .tag(element)
                 }
             }
-            
-            // MARK: experimantal tab with coordinator
-            
+
+            // MARK: experimental tab with coordinator
+
             NavigationStack(path: $coordinator.navigationPath) {
                 ExperementalView()
                     .addNavigationDestinations()
