@@ -13,7 +13,7 @@ final class RemoteContentViewModel: ObservableObject {
     private var connectionManager: ConnectionManager
     private var isLoaded: Bool = false
 
-    var apiPath: ApiPath
+    private(set) var apiPath: ApiPath
 
     init(connectionManager: ConnectionManager = ConnectionManagerImpl.shared, apiPath: ApiPath) {
         self.connectionManager = connectionManager

@@ -30,3 +30,13 @@ extension LoadingState {
         }
     }
 }
+
+extension LoadingState: Equatable {
+    static func == (lhs: LoadingState<DataType>, rhs: LoadingState<DataType>) -> Bool {
+        lhs.description == rhs.description
+    }
+
+    private var description: String {
+        String(describing: self)
+    }
+}

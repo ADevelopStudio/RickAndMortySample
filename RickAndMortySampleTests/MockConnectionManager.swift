@@ -21,30 +21,30 @@ final class MockNetworkManager: ConnectionManager {
         if let error { throw error }
         switch path {
         case .characters:
-            guard T.self is [RMCharacter].Type else {
+            guard T.self is RMCharacterResponse.Type else {
                 throw ApiError.decodingFailed
             }
-            return [RMCharacter.example] as! T
+            return RMCharacterResponse(results: [RMCharacter.example])  as! T
         case .character:
             guard T.self is RMCharacter.Type else {
                 throw ApiError.decodingFailed
             }
             return RMCharacter.example as! T
         case .locations:
-            guard T.self is [RMLocation].Type else {
+            guard T.self is RMLocationResponse.Type else {
                 throw ApiError.decodingFailed
             }
-            return [RMLocation.example] as! T
+            return RMLocationResponse(results: [RMLocation.example]) as! T
         case .location:
             guard T.self is RMLocation.Type else {
                 throw ApiError.decodingFailed
             }
             return RMLocation.example as! T
         case .episodes:
-            guard T.self is [RMEpisode].Type else {
+            guard T.self is RMEpisodeResponse.Type else {
                 throw ApiError.decodingFailed
             }
-            return [RMEpisode.example] as! T
+            return RMEpisodeResponse(results: [RMEpisode.example]) as! T
         case .episode:
             guard T.self is RMEpisode.Type else {
                 throw ApiError.decodingFailed

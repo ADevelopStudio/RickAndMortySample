@@ -61,12 +61,12 @@ struct TestConnectionManager {
 
     @Test func testCorrectTypes() async throws {
         let manager = MockNetworkManager()
-        let _: [RMCharacter] = try await manager.fetch(.characters)
+        let _: RMCharacterResponse = try await manager.fetch(.characters)
         let _: RMCharacter = try await manager.fetch(.character(10))
         let _: RMEpisode = try await manager.fetch(.episode(10))
-        let _: [RMEpisode] = try await manager.fetch(.episodes)
+        let _: RMEpisodeResponse = try await manager.fetch(.episodes)
         let _: RMLocation = try await manager.fetch(.location(10))
-        let _: [RMLocation] = try await manager.fetch(.locations)
+        let _: RMLocationResponse = try await manager.fetch(.locations)
     }
 
     @Test func testLoadingImage() async throws {
