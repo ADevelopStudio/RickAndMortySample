@@ -26,13 +26,24 @@ struct CharacterDetailsView: View {
                     ListRowView(title: "Type", message: character.type)
                     ListRowView(title: "Created", message: character.created.formatted(.dateTime.day().month().year()))
                 }
+
+                Section("Origin") {
+                    if let apiPath = character.origin.apiPath {
+                        NavigationLink(value: apiPath) {
+                            locationView(character.origin)
+                        }
+                    } else {
+                        locationView(character.origin)
+                    }
+                }
+
                 Section("Location") {
                     if let apiPath = character.location.apiPath {
                         NavigationLink(value: apiPath) {
-                            locationView
+                            locationView(character.location)
                         }
                     } else {
-                        locationView
+                        locationView(character.location)
                     }
                 }
                 Section("Appearance") {
@@ -51,11 +62,11 @@ struct CharacterDetailsView: View {
         }
     }
 
-    private var locationView: some View {
+    private func locationView(_ loc: RMCharacterLocation) -> some View {
         Label {
-            Text(character.location.name)
+            Text(loc.name)
         } icon: {
-            if let id = character.location.id {
+            if let id = loc.id {
                 Image("planet_\(id % 15)")
                     .resizable()
                     .frame(width: 30, height: 30)
