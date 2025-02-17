@@ -1,0 +1,9 @@
+{
+    "Simulator Target Bundle": "au.com.makemeapp.RickAndMortySample",
+    "aps": {
+        "alert": "Explore more about Toxic Rick",
+        "sound": "default",
+        "comment": "That's a Humanoid from Alien Spa"
+    },
+    "link_url": "https://rickandmortyapi.com/api/character/361"
+}

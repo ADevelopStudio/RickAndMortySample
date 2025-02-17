@@ -1,0 +1,9 @@
+{
+    "Simulator Target Bundle": "au.com.makemeapp.RickAndMortySample",
+    "aps": {
+        "alert": "New episode just landed",
+        "sound": "default",
+        "comment": "Look Who's Purging Now"
+    },
+    "link_url": "https://rickandmortyapi.com/api/episode/20"
+}
