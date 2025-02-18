@@ -1,5 +1,5 @@
 
-# SwiftUI Advanced Demo Project
+# SwiftUI Demo Project
 
 This project is a **SwiftUI** application built to showcase advanced iOS development techniques and best practices. It targets **iOS 16** as a minimum deployment version and demonstrates how to handle earlier iOS limitations gracefully using `if #available`.
 
@@ -82,9 +82,9 @@ ___
 You can test on simulator the app behaviour and deep link handling from push notifications. To do so, please folllow the instruction:
 1.  Run the app on Simulator.
 2.  In the app open the last tab `Extra`.
-3.  Open `Push notifications` screen and request push notification access by clicking on **Allow** button. Allow the push access.
-5.  Once push is allowed you can simply drag and drop `Explore the character.apns` or `New Episode.apns` files from the root folder of the project to the simulator screen. Application can be on active or background state.
-6.  Deeplink will handle by tapping on the push notification. 
+3.  Open `Push notifications` screen and request push notification access by clicking on **Allow** button. 
+5.  Once push is allowed you can simply drag and drop `Explore the character.apns` or `New Episode.apns` files from the root folder of the project to the simulator screen. Application can be on active or background state. 
+6.  Deeplink handles by tapping on the push notification. 
 7.  **Please note** that `.apns` files contain `bundleID` of the project. So if you change the bundleId of the project for some reasons, you have to change the content of `.apns` files as well.
   
 ----------
