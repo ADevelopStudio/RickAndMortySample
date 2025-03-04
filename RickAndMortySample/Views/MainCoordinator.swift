@@ -45,11 +45,11 @@ final class MainCoordinator: ObservableObject {
     }
 
     func backTo(_ steps: Int) {
-        navigationPath.removeLast(steps)
+        navigationPath.backSafely(steps)
     }
 
     func backToSecond() {
-        navigationPath.removeLast(navigationPath.count - 1)
+        navigationPath.backSafely(navigationPath.count - 1)
     }
 
     func open(num: Int) {
@@ -91,6 +91,17 @@ extension MainCoordinator.Tabs {
         case .locations: return .locations
         case .episodes: return .episodes
         default: return nil
+        }
+    }
+}
+
+extension NavigationPath {
+    mutating func backSafely(_ steps: Int = 1) {
+        if self.isEmpty { return }
+        if self.count < steps {
+            self.removeLast(self.count)
+        } else {
+            self.removeLast(steps)
         }
     }
 }

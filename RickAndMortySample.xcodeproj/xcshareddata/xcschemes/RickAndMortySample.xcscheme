@@ -35,7 +35,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "62773D652D5DF6E100089F9D"
+               BlueprintIdentifier = "62A196892D62F26E0024D774"
                BuildableName = "RickAndMortySampleTests.xctest"
                BlueprintName = "RickAndMortySampleTests"
                ReferencedContainer = "container:RickAndMortySample.xcodeproj">
@@ -46,7 +46,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "62773D6F2D5DF6E100089F9D"
+               BlueprintIdentifier = "62A1969A2D62F6A10024D774"
                BuildableName = "RickAndMortySampleUITests.xctest"
                BlueprintName = "RickAndMortySampleUITests"
                ReferencedContainer = "container:RickAndMortySample.xcodeproj">
